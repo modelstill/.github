@@ -1,14 +1,18 @@
 ## ModelStill
 
-**The release gate for LLM changes.** Open-source LLM evals for CI that compare every model or
-prompt change with your accepted baseline, case by case, and tell you whether it is safe to ship.
+**The release gate for LLM changes.** An open-source LLM eval framework for CI: regression-test
+every prompt and model change against a golden dataset, and ship only when the gate passes.
 
-- **Paired comparison** against the baseline: which cases a change fixed and which it broke.
-- **Confidence intervals** on every score, so noise is not mistaken for progress or a regression.
-- **One decision** that also checks flip rate, cost and p95 latency, with exit code 0 or 2 for CI
-  and a pull request comment from the GitHub Action.
-- **Works with what you log:** Langfuse, Braintrust, OpenTelemetry GenAI spans, LiteLLM and JSONL.
-- **Self-hosted and vendor-neutral.** Apache-2.0.
+- **Regression checks on every prompt and model update**, compared with the accepted baseline case
+  by case: which cases a change fixed and which it broke.
+- **Golden datasets** built from the calls you already log, versioned, with a human review queue.
+- **LLM-as-a-judge you can trust:** agreement with human labels (Cohen's kappa), verdict stability,
+  and pairwise judging in both orders.
+- **Confidence intervals** on every score, plus flip rate, cost and p95 latency in the same decision.
+- **Evals in CI:** exit code 0 or 2, a GitHub Action that comments on the pull request, and a pytest
+  plugin.
+- **Works with what you log:** OpenTelemetry GenAI spans, Langfuse, Braintrust, LiteLLM and JSONL.
+  Self-hosted and vendor-neutral. Apache-2.0.
 
 [Repository](https://github.com/modelstill/modelstill) ·
 [Documentation](https://docs.modelstill.com) ·
